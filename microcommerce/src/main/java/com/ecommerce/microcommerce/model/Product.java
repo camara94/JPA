@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.Length;
+
 @Entity
 //Pour cacher plusieurs propriétés
 //@JsonIgnoreProperties( value = { "prix", "id" } )
@@ -21,6 +23,7 @@ public class Product implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column
+	@Length(min=3, max=20)
 	private String nom;
 	@Column
 	private double prix;
