@@ -14,10 +14,10 @@ public class ProductDaoImpl implements ProductDao {
 	public static List<Product> products = new ArrayList<>();
 	
 	static {
-		products.add(new Product(1L, "Ordinateur", 350));
-		products.add(new Product(2L, "Aspirateur", 500));
-		products.add(new Product(3L, "Table de Ping", 750));
-		products.add(new Product(4L, "Téléphone", 200));
+		products.add(new Product(1L, "Ordinateur", 350, 300));
+		products.add(new Product(2L, "Aspirateur", 500, 450));
+		products.add(new Product(3L, "Table de Ping", 750, 700));
+		products.add(new Product(4L, "Téléphone", 200, 150));
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public Product save(Product product) {
-		// TODO Auto-generated method stub
+		products.add(product);
 		return product;
 	}
 

@@ -1,20 +1,27 @@
 package com.ecommerce.microcommerce.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+//Pour cacher plusieurs propriétés
+@JsonIgnoreProperties( value = { "prix", "id" } )
 public class Product {
 	
 	private Long id;
 	private String nom;
 	private double prix;
+	//Pour cacher une propriété
+	//@JsonIgnore
+	private double prixAchat;
 	
 	public Product() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(Long id, String nom, double prix) {
+	public Product(Long id, String nom, double prix, double prixAchat) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prix = prix;
+		this.prixAchat = prixAchat;
 	}
 
 	public Long getId() {
@@ -40,8 +47,19 @@ public class Product {
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
-	
-	
+
+	public double getPrixAchat() {
+		return prixAchat;
+	}
+
+	public void setPrixAchat(double prixAchat) {
+		this.prixAchat = prixAchat;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", nom=" + nom + ", prix=" + prix + ", prixAchat=" + prixAchat + "]";
+	}
 	
 
 }
